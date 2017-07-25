@@ -17,11 +17,15 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
     
+    % Simple solution
     predictions = X * theta;
     errors = (predictions - y);
     
-    theta(1) = theta(1) - alpha * (1/m) * sum(errors);
-    theta(2) = theta(2) - alpha * (1/m) * sum((errors .* X(:, 2)));
+    theta(1) = theta(1) - alpha / m * sum(errors);
+    theta(2) = theta(2) - alpha / m * sum((errors .* X(:, 2)));
+    
+    % Vectorized solution
+    % TODO: Implement solution
     
     % ============================================================
 

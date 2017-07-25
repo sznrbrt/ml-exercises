@@ -30,11 +30,10 @@ mu = mean(X);
 sigma = std(X);
 
 % loop through the features
-for featureIdx = 1:size(X,2)
+for featureIdx = size(X,2)
  % loop through the values
- for valueIdx = 1:size(X,1)
-    % normalize values
-    X_norm(valueIdx, featureIdx) = (X_norm(valueIdx, featureIdx) - mu(featureIdx)) / sigma(featureIdx); 
+ for valueIdx = size(X,featureIdx)
+    
  end
 end
 % ============================================================
