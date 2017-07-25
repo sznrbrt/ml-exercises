@@ -21,8 +21,14 @@ for iter = 1:num_iters
     predictions = X * theta;
     errors = (predictions - y);
     
+%     fprintf('Errors:\n');
+%     fprintf('%f\n', errors);
+%     
+    fprintf('X:\n');
+    fprintf('%f\n', X(:,2));
+    
     tempTheta(1,1) = tempTheta(1,1) - alpha * (1/m) * sum(errors);
-    tempTheta(2,1) = tempTheta(2,1) - alpha * (1/m) * sum((errors .* X(:, 2)));
+    tempTheta(2,1) = tempTheta(2,1) - alpha * (1/m) * sum((errors * X(:, 2)));
     
     theta = tempTheta;
     
