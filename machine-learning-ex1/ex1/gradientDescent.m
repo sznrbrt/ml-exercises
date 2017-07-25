@@ -20,8 +20,8 @@ for iter = 1:num_iters
     predictions = X * theta;
     errors = (predictions - y);
     
-    theta(1,1) = theta(1,1) - alpha * (1/m) * sum(errors);
-    theta(2,1) = theta(2,1) - alpha * (1/m) * sum((errors .* X(:, 2)));
+    theta(1) = theta(1) - alpha * (1/m) * sum(errors);
+    theta(2) = theta(2) - alpha * (1/m) * sum((errors .* X(:, 2)));
     
     % ============================================================
 
