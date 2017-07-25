@@ -17,14 +17,11 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
     
-    tempTheta = theta;
     predictions = X * theta;
     errors = (predictions - y);
     
-    tempTheta(1,1) = tempTheta(1,1) - alpha * (1/m) * sum(errors);
-    tempTheta(2,1) = tempTheta(2,1) - alpha * (1/m) * sum((errors .* X(:, 2)));
-    
-    theta = tempTheta;
+    theta(1,1) = theta(1,1) - alpha * (1/m) * sum(errors);
+    theta(2,1) = theta(2,1) - alpha * (1/m) * sum((errors .* X(:, 2)));
     
     % ============================================================
 
