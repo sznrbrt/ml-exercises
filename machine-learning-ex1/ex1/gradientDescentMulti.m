@@ -25,13 +25,12 @@ for iter = 1:num_iters
     % end
    
     % Vectorized solution
-    delta = (1/m) * sum(X .* repmat((X*theta - y), 1, size(X,2)));
-    theta = (theta' - (alpha * delta))';g
+    delta = (1/m) * sum(repmat((X*theta - y), 1, size(X,2)) .* X);
+    theta = (theta' - (alpha * delta))';
     % ============================================================
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCostMulti(X, y, theta);
-
 end
 
 end
