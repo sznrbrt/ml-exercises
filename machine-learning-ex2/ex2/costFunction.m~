@@ -21,8 +21,9 @@ grad = zeros(size(theta));
 %
 
 % Simple solution
-grad = ((-y .* log(X * theta)) - ((1-y) .* log(1 - (X * theta))));
-J = 1/m * grad;
+
+grad = sigmoid
+
 
 % =============================================================
 
